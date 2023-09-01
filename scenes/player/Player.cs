@@ -2,7 +2,7 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	public const int MaxSpeed = 200;
+	public const int MaxSpeed = 125;
 	public const int AccelerationSmoothing = 25;
 
 	public override void _Ready()
