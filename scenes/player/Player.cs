@@ -2,7 +2,8 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 200.0f;
+	public const int MaxSpeed = 200;
+	public const int AccelerationSmoothing = 25;
 
 	public override void _Ready()
 	{
@@ -12,8 +13,9 @@ public partial class Player : CharacterBody2D
 	{
 		Vector2 movementVector = GetMovementVector();
 		Vector2 direction = movementVector.Normalized();
+		Vector2 targetVelocity = direction * MaxSpeed;
 
-		Velocity = direction * Speed;
+		Velocity = Velocity.Lerp(targetVelocity, 1 - Mathf.Exp(-(float)delta * AccelerationSmoothing));
 		MoveAndSlide();
 	}
 
