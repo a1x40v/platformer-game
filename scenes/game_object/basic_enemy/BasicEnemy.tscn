@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cixm36x20uuqr"]
 
-[ext_resource type="Texture2D" uid="uid://7bqngcynmdn1" path="res://scenes/basic_enemy/basic_enemy.png" id="1_5g2bf"]
-[ext_resource type="Script" path="res://scenes/basic_enemy/BasicEnemy.cs" id="1_lm51h"]
+[ext_resource type="Texture2D" uid="uid://7bqngcynmdn1" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_5g2bf"]
+[ext_resource type="Script" path="res://scenes/game_object/basic_enemy/BasicEnemy.cs" id="1_lm51h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rrb1i"]
 radius = 12.0
