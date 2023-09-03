@@ -3,11 +3,14 @@ using Godot;
 public partial class BasicEnemy : CharacterBody2D
 {
 	public const float Speed = 40.0f;
+	private HealthComponent _healthComponent;
 
 	public override void _Ready()
 	{
 		var area2D = GetNode<Area2D>("Area2D");
 		area2D.AreaEntered += OnAreaEntered;
+
+		_healthComponent = GetNode<HealthComponent>("HealthComponent");
 	}
 
 	public override void _Process(double delta)
@@ -29,6 +32,6 @@ public partial class BasicEnemy : CharacterBody2D
 
 	private void OnAreaEntered(Area2D otherArea)
 	{
-		QueueFree();
+		_healthComponent.Damage(100);
 	}
 }
